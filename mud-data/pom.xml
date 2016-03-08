@@ -9,15 +9,5 @@
     <version>0.1-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>mud-api</artifactId>
-  <packaging>war</packaging>
-
-  <dependencies>
-    <dependency>
-      <groupId>in.vshukla</groupId>
-      <artifactId>mud-data</artifactId>
-      <version>${project.parent.version}</version>
-    </dependency>
-  </dependencies>
-
+  <artifactId>mud-data</artifactId>
 </project>
