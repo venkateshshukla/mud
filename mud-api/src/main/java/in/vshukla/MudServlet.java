@@ -23,30 +23,25 @@ public class MudServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter pw = resp.getWriter();
-        pw.write(String.format("Received a %s request.\n", req.getMethod()));
-        pw.write(person.toString());
-        pw.close();
+        addResponse(req, resp);
     }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter pw = resp.getWriter();
-        pw.write(String.format("Received a %s request.\n", req.getMethod()));
-        pw.write(person.toString());
-        pw.close();
+        addResponse(req, resp);
     }
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter pw = resp.getWriter();
-        pw.write(String.format("Received a %s request.\n", req.getMethod()));
-        pw.write(person.toString());
-        pw.close();
+        addResponse(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        addResponse(req, resp);
+    }
+
+    private void addResponse(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         PrintWriter pw = resp.getWriter();
         pw.write(String.format("Received a %s request.\n", req.getMethod()));
         pw.write(person.toString());
