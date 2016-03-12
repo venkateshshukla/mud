@@ -1,38 +1,39 @@
 package in.vshukla;
 
-import javax.servlet.Servlet;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class MudServlet implements Servlet {
+public class MudServlet extends HttpServlet {
 
-    public void init(ServletConfig servletConfig) throws ServletException {
-
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter pw = resp.getWriter();
+        pw.write(String.format("Received a %s request", req.getMethod()));
+        pw.close();
     }
 
-    public ServletConfig getServletConfig() {
-        return null;
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter pw = resp.getWriter();
+        pw.write(String.format("Received a %s request", req.getMethod()));
+        pw.close();
     }
 
-    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        PrintWriter out = servletResponse.getWriter();
-        out.println("<html>");
-        out.println("<body>");
-        out.println("<h1>Hello, world!</h1>");
-        out.println("</body>");
-        out.println("</html>");
-        out.close();
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter pw = resp.getWriter();
+        pw.write(String.format("Received a %s request", req.getMethod()));
+        pw.close();
     }
 
-    public String getServletInfo() {
-        return null;
-    }
-
-    public void destroy() {
-
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        PrintWriter pw = resp.getWriter();
+        pw.write(String.format("Received a %s request", req.getMethod()));
+        pw.close();
     }
 }
