@@ -9,4 +9,12 @@
 
   <description>Configuration file for bean injection.</description>
 
+  <bean id="person" class="in.vshukla.Person">
+    <property name="name" value="Deadpool" />
+    <property name="age" value="22" />
+    <property name="weight" value="70" />
+    <property name="height" value="1.75" />
+    <property name="education" value="GRAD" />
+    <property name="gender" value="MALE" />
+  </bean>
 </beans>
